@@ -1,17 +1,18 @@
 {
-    "name": "1project",
-    "version": "1.0.0",
-    "description": "webpack, let's do this.",
-    "main": "index.js",
-    "scripts": {
-        "dev": "webpack-dev-server --config webpack.config.dev.js --hot",
-        "build": "webpack --config webpack.config.prod.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Nick",
-    "license": "ISC",
-    "devDependencies": {
-        "html-webpack-plugin": "^2.30.1",
-        "webpack-livereload-plugin": "^1.0.0"
-    }
+  "name": "1project",
+  "version": "1.0.0",
+  "description": "webpack, let's do this.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.dev.js --hot",
+    "build": "webpack --config webpack.config.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack-livereload-plugin": "^1.0.0"
+  }
 }
