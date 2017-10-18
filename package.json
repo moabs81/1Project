@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config webpack.config.dev.js --hot",
     "build": "webpack --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install"
+    "postinstall": "bower install && mkdir dist"
   },
   "author": "Nick",
   "license": "ISC",
