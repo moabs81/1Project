@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -15,7 +16,22 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            title: 'Production Template',
+            template: './src/index.html',
+            chunks: {
+
+            }
+        }),
+        new HtmlWebpackIncludeAssetsPlugin({
+            assets: ['bundle.js'],
+            append: false,
+            publicPath: 'https://tsps.ncsecu.local/demo/s22307n/SiteAssets/'
+        }),
+        new webpack.ProvidePlugin({
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+            'jQuery': 'jQuery',
+            '$': 'jQuery'
         })
     ],
     module: {

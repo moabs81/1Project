@@ -1,14 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var liveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
     devtool: 'cheap-eval-source-map',
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
-        './src/index.js'
+        './index.js'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -19,7 +18,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new liveReloadPlugin()
+        new webpack.ProvidePlugin({
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+            'jQuery': 'jQuery',
+            '$': 'jQuery'
+        })
     ],
     module: {
         loaders: [{
